@@ -68,37 +68,5 @@ TARGET_RECOVERY_FSTAB = device/fraunhofer/trustme_hammerhead_cml/fstab.recovery.
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-       device/lge/hammerhead/sepolicy \
+       device/lge/hammerhead/sepolicy
 
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-       app.te \
-       bluetooth_loader.te \
-       bridge.te \
-       camera.te \
-       device.te \
-       domain.te \
-       file.te \
-       hostapd.te \
-       irsc_util.te \
-       mediaserver.te \
-       mpdecision.te \
-       netmgrd.te \
-       platform_app.te \
-       qmux.te \
-       radio.te \
-       rild.te \
-       rmt.te \
-       sensors.te \
-       ssr.te \
-       surfaceflinger.te \
-       system_server.te \
-       tee.te \
-       thermald.te \
-       time.te \
-       ueventd.te \
-       vss.te \
-       wpa.te \
-       file_contexts \
-       genfs_contexts \
-       te_macros

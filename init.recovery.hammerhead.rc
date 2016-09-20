@@ -16,4 +16,5 @@ on fs
 ## Daemon processes to be run by init.
 ##
 service busybox-symlinks /sbin/busybox-android --install -s /system/bin
+    seclabel u:r:su:s0
     oneshot

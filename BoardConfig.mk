@@ -33,7 +33,7 @@ TARGET_CPU_SMP := true
 
 TARGET_CPU_VARIANT := krait
 
-TARGET_USES_LOGD := false
+#TARGET_USES_LOGD := false
 
 USE_OPENGL_RENDERER := true
 BOARD_USE_LEGACY_UI := true
@@ -45,7 +45,10 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 64000000
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 #BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 maxcpus=2 msm_watchdog_v2.enable=1
-BOARD_KERNEL_CMDLINE := androidboot.hardware=hammerhead user_debug=31 zcache selinux=1
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
+
+#BOARD_KERNEL_CMDLINE := androidboot.hardware=hammerhead user_debug=31 zcache selinux=0
+BOARD_KERNEL_CMDLINE := androidboot.hardware=hammerhead user_debug=31 console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 maxcpus=2 msm_watchdog_v2.enable=1 zcache selinux_enforcing=0 
 #BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 zcache
 
 # Use the following to always boot into charger mode (LPM Mode) for debug reasons..
@@ -70,3 +73,4 @@ TARGET_RECOVERY_FSTAB = device/fraunhofer/trustme_hammerhead_cml/fstab.recovery.
 BOARD_SEPOLICY_DIRS += \
        device/lge/hammerhead/sepolicy
 
+USE_CLANG_PLATFORM_BUILD := true

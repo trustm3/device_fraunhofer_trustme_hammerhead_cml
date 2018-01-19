@@ -1,0 +1,6 @@
+# Fixme this is only for time service in a0
+allow untrusted_app time:unix_stream_socket connectto;
+allow untrusted_app time:unix_stream_socket rw_socket_perms;
+
+# TheMuppets binaries compat
+allow untrusted_app vss_exec:file rx_file_perms;

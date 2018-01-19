@@ -71,6 +71,7 @@ TARGET_RECOVERY_FSTAB = device/fraunhofer/trustme_hammerhead_cml/fstab.recovery.
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
+       device/fraunhofer/trustme_hammerhead_cml/sepolicy \
        device/lge/hammerhead/sepolicy
 
 USE_CLANG_PLATFORM_BUILD := true

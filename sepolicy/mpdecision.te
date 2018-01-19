@@ -1,0 +1,17 @@
+# allow poer proxy to use trustme-com
+allow mpdecision trustme-com:dir create_dir_perms;
+allow mpdecision trustme-com:sock_file create_file_perms;
+
+# allow cpuctl as we do not have cgroups mounteted there
+allow mpdecision cpuctl_device:dir r_dir_perms;
+
+# seems that mpdescission needs access to /proc/<pid qmux>/status
+r_dir_file(mpdecision, qmux)
+
+# TheMuppets binaies compat
+#allow mpdecision system_data_file:dir rw_dir_perms;
+#allow mpdecision system_data_file:file create_file_perms;
+allow mpdecision power_control_device:{ file chr_file } rw_file_perms;
+# Connect to thermald.
+allow mpdecision thermald_socket:dir r_dir_perms;
+unix_socket_connect(mpdecision, thermald, thermald)
